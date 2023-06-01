@@ -5,24 +5,27 @@ import Contact from "./Component/Contact";
 import Menu from "./Component/Menu";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
+import NotFound from "./Component/NotFound";
+
 
 function App() {
   return (
-    <div >
-        <br/>
+    <div>
+      <br />
       <Menu />
-       <br/>
+      <br />
       <Header />
       <div className="container">
-      <Routes>
-        <Route exact path="/" Component={Home} />
-        <Route exact path="/home" Component={Home} />
-        <Route exact path="/about" Component={About} />
-        <Route exact path="/contact" Component={Contact} />
-        <Route />
-      </Routes>
+        <Routes>
+          <Route exact path="/" Component={Home} />
+          <Route  path="/home" Component={Home} />
+          <Route  path="/about" Component={About} />
+          <Route  path="/contact" Component={Contact} />
+          <Route Component={NotFound} />
+          <Route />
+        </Routes>
       </div>
-      <br/>
+      <br />
       <Footer />
     </div>
   );
