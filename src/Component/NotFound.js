@@ -1,5 +1,7 @@
- import React from 'react'
- 
- const NotFound=()=> <h1> 404 (NotFound)</h1>
+import React from "react";
 
- export default NotFound;
+function NotFound() {
+  return <h1> 404 (NotFound)</h1>;
+}
+
+export default NotFound;
