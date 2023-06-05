@@ -18,7 +18,7 @@ export default function AddNewUser() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    // setUser({ ...user, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
   const saveUser = (event) => {
