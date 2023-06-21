@@ -12,7 +12,6 @@ export default function About() {
 <ul>
   <li>
     <Link to="/About/SocialMedia,  Facebook, instagram"> Social Media </Link>
-
   </li>
 </ul>
     </div>

@@ -60,15 +60,13 @@ export default function Users() {
                                 <td>{user.id}</td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <th> <Link to={"/user-details/"+user.id} className="btn btn-secondary"> View Details</Link> </th>
+                                <td> <Link to={"/user-details/"+user.id} className="btn btn-secondary"> View Details</Link> </td>
                             </tr>
                             )
                         })
                     }
                 </tbody>
             </table>
-
-
     </div>
   );
 }
