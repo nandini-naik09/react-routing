@@ -24,7 +24,7 @@ export default function AddNewUser() {
   const saveUser = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3005/Users/", user)
+      .post("https://reqres.in/api/users/", user)
       .then((result) => {
         alert("User added succssfully.")
         console.log(result);

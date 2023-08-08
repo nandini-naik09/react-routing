@@ -20,10 +20,10 @@ export default function UserDetails() {
 
   const GetUserById = () => {
     axios
-      .get("http://localhost:3005/Users/" + id)
+      .get("https://reqres.in/api/users/" + id)
       .then((result) => {
-        setCurrentUser(result.data);
-        console.log(result.data);
+        setCurrentUser(result.data.data);
+        console.log(result.data.data);
       })
       .catch((error) => {
         console.log(error);
@@ -32,7 +32,7 @@ export default function UserDetails() {
 
   const deleteUserById = () => {
     axios
-      .delete("http://localhost:3005/Users/" + id)
+      .delete("https://reqres.in/api/users/" + id)
       .then((result) => {
         console.log(result);
         alert("User Deleted Successfully");
@@ -50,7 +50,7 @@ export default function UserDetails() {
 
         <ul className="list-group list-group-flush">
           <li className="list-group-item"> Id: {currentUser.id}</li>
-          <li className="list-group-item"> Name: {currentUser.name}</li>
+          <li className="list-group-item"> First Name: {currentUser.first_name} {currentUser.last_name}</li>
           <li className="list-group-item"> Email: {currentUser.email}</li>
         </ul>
         <div className="card-footer">

@@ -28,10 +28,10 @@ export default function EditUser() {
 
   const GetUserById = () => {
     axios
-      .get("http://localhost:3005/Users/" + id)
+      .get("https://reqres.in/api/users/" + id)
       .then((result) => {
-        setCurrentUser(result.data);
-        console.log(result.data);
+        setCurrentUser(result.data.data);
+        console.log(result.data.data);
       })
       .catch((error) => {
         console.log(error);
@@ -41,7 +41,7 @@ export default function EditUser() {
   const UpdateUser = (event) => {
     event.preventDefault();
     axios
-      .put("http://localhost:3005/Users/" + currentUser.id, currentUser)
+      .put("https://reqres.in/api/users/" + currentUser.id, currentUser)
       .then((result) => {
         alert("Changes saved succssfully.");
         console.log(result);
@@ -64,7 +64,7 @@ export default function EditUser() {
             className="form-control"
             id="name"
             name="name"
-            value={currentUser.name}
+            value={currentUser.first_name}
             onChange={handleInputChange}
             placeholder="Please enter your Name"
           ></input>

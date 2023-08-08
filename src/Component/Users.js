@@ -13,10 +13,11 @@ export default function Users() {
   //method to get the users from API
   const getUserFromAPI = () => {
     axios
-      .get("http://localhost:3005/Users")
+      .get("https://reqres.in/api/users?page=1")
       .then((result) => {
         if (result.status === 200) {
-          setUsers(result?.data);
+          console.log(result?.data.data);
+          setUsers(result?.data.data);
         }
       })
       .catch((error) => {
@@ -56,9 +57,9 @@ export default function Users() {
                     {
                         users.map((user,i)=>{
                             return(
-                            <tr key={i}>
+                            <tr key={user.id}>
                                 <td>{user.id}</td>
-                                <td>{user.name}</td>
+                                <td>{user.first_name} {user.last_name}</td>
                                 <td>{user.email}</td>
                                 <td> <Link to={"/user-details/"+user.id} className="btn btn-secondary"> View Details</Link> </td>
                             </tr>
